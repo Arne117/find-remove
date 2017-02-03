@@ -9,8 +9,8 @@ var fs      = require('fs'),
 
 function isOlder(path, ageSeconds) {
     var stats          = fs.statSync(path),
-        mtime          = stats.mtime.getTime(),
-        expirationTime = (mtime + (ageSeconds * 1000))
+        birthtime          = stats.birthtime.getTime(),
+        expirationTime = (birthtime + (ageSeconds * 1000))
 
     return now > expirationTime
 }
